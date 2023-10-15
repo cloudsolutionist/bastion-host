@@ -4,14 +4,16 @@
 * Clone this repo
 ```bash
 git clone https://github.com/cloudsolutionist/bastion-host.git
-
+```
+```bash
 cd bastion-host
 ```
 
 * Create S3 bucket
 ```bash
 export BUCKET_NAME=<unique-name-or-random-string>
-
+```
+```bash
 aws s3 mb s3://$BUCKET_NAME
 ```
 
@@ -23,7 +25,8 @@ aws s3 cp template.cf.json s3://$BUCKET_NAME
 * Create the CloudFormation Stack
 ```bash
 export STACK_NAME=BastionHostExample
-
+```
+```bash
 aws cloudformation create-stack --stack-name $STACK_NAME https://$BUCKET_NAME.s3.amazonaws.com/template.cf.json
 ```
 
@@ -104,7 +107,8 @@ exit
 * Empty and Delete the S3 Bucket
 ```bash
 aws s3 rm s3://$BUCKET_NAME --recursive
-
+```
+```bash
 aws s3 rb s3://$BUCKET_NAME 
 ```
 
