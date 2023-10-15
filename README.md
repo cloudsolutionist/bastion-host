@@ -126,3 +126,8 @@ aws s3 rb s3://$BUCKET_NAME
 aws cloudformation delete-stack --stack-name $STACK_NAME
 ```
 
+### Some Helpful Links
+
+[AWS Documentation - Create key pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html)
+
+[Transfer files to Linux instances using an SCP client](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-ssh.html#linux-file-transfer-scp)
