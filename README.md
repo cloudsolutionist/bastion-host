@@ -72,9 +72,9 @@ ssh -i "MyKeyPair.pem" ec2-user@$PUBLIC_IP
 exit
 ```
 
-* Get the PrivateIP of the `InternalApplicationInstance`
+* Get the PrivateIP of the internal `ApplicationInstance`
 ```
-PRIVATE_IP=$(aws ec2 describe-instances --filters "Name=tag-key,Values=Name" "Name=tag-value,Values=InternalApplicationInstance" --query Reservations[].Instances[0].PrivateIpAddress --output text)
+PRIVATE_IP=$(aws ec2 describe-instances --filters "Name=tag-key,Values=Name" "Name=tag-value,Values=ApplicationInstance" --query Reservations[].Instances[0].PrivateIpAddress --output text)
 ```
 
 * Transfer the key file "`MyKeyPair.pem`" from your host to the bastion instance
