@@ -74,12 +74,15 @@ exit
 
 * Get the PrivateIP of the internal `ApplicationInstance`
 ```
-PRIVATE_IP=$(aws ec2 describe-instances --filters "Name=tag-key,Values=Name" "Name=tag-value,Values=ApplicationInstance" --query Reservations[].Instances[0].PrivateIpAddress --output text)
+aws ec2 describe-instances --filters "Name=tag-key,Values=Name" "Name=tag-value,Values=ApplicationInstance" --query Reservations[].Instances[0].PrivateIpAddress --output text > private-ip.txt
 ```
 
-* Transfer the key file "`MyKeyPair.pem`" from your host to the bastion instance
+* Transfer the files `MyKeyPair.pem` and `private-ip.txt` from your host to the bastion instance
 ```bash
 scp -i "MyKeyPair.pem" MyKeyPair.pem ec2-user@<public-ip-address>:
+```
+```bash
+scp -i "MyKeyPair.pem" private-ip.txt ec2-user@<public-ip-address>:
 ```
 
 * SSH to bastion instance again
@@ -88,6 +91,9 @@ ssh -i "MyKeyPair.pem" ec2-user@$PUBLIC_IP
 ```
 
 * SSH to private instance (`InternalApplicationInstance`)
+```bash
+PRIVATE_IP=$(cat private-ip.txt)
+```
 ```bash
 ssh -i "MyKeyPair.pem" ec2-user@$PRIVATE_IP
 ```
