@@ -128,6 +128,6 @@ aws cloudformation delete-stack --stack-name $STACK_NAME
 
 ### Some Helpful Links
 
-[AWS Documentation - Create key pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html)
+[Create a key pair using AWS CloudFormation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#create-key-pair-cloudformation)
 
 [Transfer files to Linux instances using an SCP client](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-ssh.html#linux-file-transfer-scp)
