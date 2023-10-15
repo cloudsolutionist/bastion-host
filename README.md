@@ -1,5 +1,8 @@
 # Bastion Host
 
+**SSH access to private application through the bastion host**
+![](./network-diagram-for-ssh-access-to-private-application-through-the-bastion-host.png)
+
 ### Create the CloudFormation Stack
 * Clone this repo
 ```bash
