@@ -27,7 +27,7 @@ aws s3 cp template.cf.json s3://$BUCKET_NAME
 export STACK_NAME=BastionHostExample
 ```
 ```bash
-aws cloudformation create-stack --stack-name $STACK_NAME https://$BUCKET_NAME.s3.amazonaws.com/template.cf.json
+aws cloudformation create-stack --stack-name $STACK_NAME --template-url https://$BUCKET_NAME.s3.amazonaws.com/template.cf.json
 ```
 
 * Check status and keep checking until the value is `CREATE_COMPLETE`
