@@ -101,7 +101,15 @@ exit
 exit
 ```
 
+* Empty and Delete the S3 Bucket
+```bash
+aws s3 rm s3://$BUCKET_NAME --recursive
+
+aws s3 rb s3://$BUCKET_NAME 
+```
+
 * Delete the cloudformation stack
 ```bash
 aws cloudformation delete-stack --stack-name $STACK_NAME
 ```
+
