@@ -88,3 +88,20 @@ ssh -i "MyKeyPair.pem" ec2-user@$PUBLIC_IP
 ```bash
 ssh -i "MyKeyPair.pem" ec2-user@$PRIVATE_IP
 ```
+
+### Clean up resources
+
+* Exit from internal instance (`ApplicationInstance`)
+```bash
+exit
+```
+
+* Exit from bastion host (`BastionInstance`)
+```bash
+exit
+```
+
+* Delete the cloudformation stack
+```bash
+aws cloudformation delete-stack --stack-name $STACK_NAME
+```
