@@ -41,7 +41,7 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "InternalApplicationInstance"
+            "Value": "ApplicationInstance"
           }
         ],
         "KeyName": {
