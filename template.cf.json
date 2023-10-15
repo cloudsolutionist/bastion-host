@@ -27,11 +27,19 @@
         }
       }
     },
+    "MyKeyPair": {
+      "Type": "AWS::EC2::KeyPair",
+      "Properties": {
+        "KeyName": "MyKeyPair"
+      }
+    },
     "ApplicationInstance": {
       "Type": "AWS::EC2::Instance",
       "Properties": {
         "ImageId": "ami-041feb57c611358bd",
-        "KeyName": "mykeypair",
+        "KeyName": {
+          "Ref": "MyKeyPair"
+        },
         "SubnetId": {
           "Ref": "PrivateSubnet"
         },
