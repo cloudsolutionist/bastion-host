@@ -79,7 +79,7 @@ PRIVATE_IP=$(aws ec2 describe-instances --filters "Name=tag-key,Values=Name" "Na
 
 * Transfer the key file "`MyKeyPair.pem`" from your host to the bastion instance
 ```bash
-scp -i MyKeyPair.pem MyKeyPair.pem ec2-user@$PUBLIC_IP:MyKeyPair.pem
+scp -i "MyKeyPair.pem" MyKeyPair.pem ec2-user@$PUBLIC_IP:MyKeyPair.pem
 ```
 
 * SSH to bastion instance again
