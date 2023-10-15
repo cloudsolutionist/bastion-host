@@ -12,12 +12,12 @@ cd bastion-host
 ```bash
 export BUCKET_NAME=<unique-name-or-random-string>
 
-aws s3 mb $BUCKET_NAME
+aws s3 mb s3://$BUCKET_NAME
 ```
 
 * Upload the CloudFormation template to S3
 ```bash
-aws s3 cp template.cf.json $BUCKET_NAME
+aws s3 cp template.cf.json s3://$BUCKET_NAME
 ```
 
 * Create the CloudFormation Stack
